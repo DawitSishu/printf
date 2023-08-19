@@ -7,7 +7,7 @@
 * Return: 0 on success and -1 on failure
 */
 
-int print_char(char c)
+int printer_fun(const char c)
 {
 return (write(1, &c, 1));
 }

@@ -4,7 +4,20 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int print_char(char c);
 
+/**
+ * struct characterIdentifier - represents caracter and its handler funcion
+ * @character: the caracter to be identified
+ * @f: the function associated with the character
+ */
+struct characterIdentifier
+{
+char character;
+int (*f)(va_list);
+};
+int printer_fun(const char c);
+int print_string(va_list str);
+int print_character(va_list chr);
+int _printf(const char *format, ...);
 
 #endif
