@@ -9,12 +9,12 @@
 int _printf(const char *format, ...)
 {
 unsigned int printed_chars = 0, i, j;
-struct characterIdentifier choices[] = {
+identifier choices[] = {
 {'s', print_string},
 {'c', print_character},
 };
 va_list args;
-va_start(args,format);
+va_start(args, format);
 if (format == NULL)
 {
 return (0);

@@ -15,6 +15,7 @@ struct characterIdentifier
 char character;
 int (*f)(va_list);
 };
+typedef struct characterIdentifier identifier;
 int printer_fun(const char c);
 int print_string(va_list str);
 int print_character(va_list chr);

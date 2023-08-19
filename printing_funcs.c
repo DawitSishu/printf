@@ -24,7 +24,7 @@ return (i);
 
 /**
 * print_character - prints a string to stdout
-* @str: the string to be printed
+* @chr: the string to be printed
 *
 * Return: printed  1 (only one is printed)
 */
