@@ -11,9 +11,6 @@ int printStrings(va_list args)
 char *str = va_arg(args, char *);
 int item_count = 0, i;
 
-if (str == NULL)
-str = "(null)";
-
 for (i = 0; str[i] != '\0'; i++)
 {
 if (printer_fun(str[i]) == -1)
