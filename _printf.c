@@ -47,5 +47,5 @@ printed_chars += printer_fun(format[i]);
 }
 }
 va_end(args);
-return (printed_chars);
+return (printed_chars - 1);
 }
