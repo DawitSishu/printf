@@ -1,12 +1,14 @@
 #include "main.h"
+
 /**
  * printCharacters - prints a character to stdout
  * @args: va_list variable
  *
- * Return: number of caracters printed (1)
+ * Return: number of characters printed
  */
 int printCharacters(va_list args)
 {
-printer_fun(va_arg(args, int));
+char c = va_arg(args, int);
+printer_fun(c);
 return (1);
 }
