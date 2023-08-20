@@ -15,6 +15,7 @@ if (format == NULL)
 {
 return (-1);
 }
+identifiers[2] = '\0';
 va_start(args, format);
 for (i = 0; format[i]; i++)
 {
@@ -22,7 +23,6 @@ if (format[i] == '%')
 {
 identifiers[0] = '%';
 identifiers[1] = format[i + 1];
-identifiers[2] = '\0';
 identifier = identifierFunc(identifiers);
 if (identifier)
 {
