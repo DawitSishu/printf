@@ -12,13 +12,15 @@
  */
 struct characterIdentifier
 {
-char character;
+char *character;
 int (*f)(va_list);
 };
-typedef struct characterIdentifier identifier;
+typedef struct characterIdentifier characterIdentifier;
+int (*identifierFunc(char *format))(va_list args);
+int printCharacters(va_list args);
+int printStrings(va_list args);
+int printIdentifier(va_list args);
 int printer_fun(const char c);
-int print_string(va_list str);
-int print_character(va_list chr);
 int _printf(const char *format, ...);
 
 #endif

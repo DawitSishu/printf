@@ -8,41 +8,42 @@
 */
 int _printf(const char *format, ...)
 {
-unsigned int printed_chars = 0, i, j;
-identifier choices[] = {
-{'s', print_string},
-{'c', print_character},
-};
+int printed_chars = 0, i, (*identifier)(va_list);
+char identifiers[3];
 va_list args;
-va_start(args, format);
 if (format == NULL)
 {
-return (0);
+return (-1);
 }
-
-for (i = 0; format[i] != '\0'; i++)
+va_start(args, format);
+for (i = 0; format[i]; i++)
 {
 if (format[i] == '%')
 {
-if (format[i + 1] == '%')
+identifiers[0] = '%';
+identifiers[1] = format[i + 1];
+identifiers[2] = '\0';
+identifier = identifierFunc(identifiers);
+if (identifier)
 {
-printer_fun('%');
+printed_chars += identifier(args);
 i++;
-continue;
 }
-for (j = 0; j < sizeof(choices) / sizeof(choices[0]); j++)
+else if (format[i + 1] != '\0')
 {
-if (choices[j].character == format[i + 1])
-{
-printed_chars += choices[j].f(args);
+printed_chars += printer_fun('%');
+printed_chars += printer_fun(format[i + 1]);
 i++;
+}
+else
+{
+printed_chars += printer_fun('%');
 break;
-}
 }
 }
 else
 {
-printer_fun(format[i]);
+printed_chars += printer_fun(format[i]);
 }
 }
 va_end(args);
