@@ -13,7 +13,7 @@ char identifiers[3];
 va_list args;
 if (format == NULL || (format[0] == '%' && !format[1]))
 return (-1);
-if (format[0] == '%' && format[1] == ' ' && format[2] == '\0')
+if (format[0] == '%' && format[1] == ' ' && format[2] == NULL)
 return (-1);
 identifiers[2] = '\0';
 va_start(args, format);
