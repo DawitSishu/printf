@@ -1,5 +1,8 @@
 #include "main.h"
 
+int printIntigers(va_list args);
+int count_digits(int num);
+int print_digits(int num);
 /**
  * identifierFunc - identifies function depending on string representation
  * @format: the string format to be used
@@ -76,8 +79,7 @@ return (digits);
 int print_digits(int num)
 {
 int digits = count_digits(num);
-unsigned int base_int = (num < 0) ? -num : num;;
-
+unsigned int base_int = (num < 0) ? -num : num;
 if (num < 0)
 {
 printer_fun('-');
