@@ -12,8 +12,6 @@ characterIdentifier identifiers[] = {
 {"%c", printCharacters},
 {"%s", printStrings},
 {"%%", printIdentifier},
-{"%d", printIntigers},
-{"%i", printIntigers},
 {NULL, NULL}
 };
 int i;
