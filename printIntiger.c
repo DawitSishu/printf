@@ -30,7 +30,7 @@ return (digits);
 int print_digits(int num)
 {
 int digits = count_digits(num);
-int base_int = (num < 0) ? -num : num;;
+unsigned int base_int = (num < 0) ? -num : num;;
 
 if (num < 0)
 {
