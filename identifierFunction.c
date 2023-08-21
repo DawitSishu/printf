@@ -9,8 +9,6 @@
 int (*identifierFunc(char *format))(va_list args)
 {
 characterIdentifier identifiers[] = {
-{"%d", printIntigers},
-{"%i", printIntigers},
 {"%c", printCharacters},
 {"%s", printStrings},
 {"%%", printIdentifier},
