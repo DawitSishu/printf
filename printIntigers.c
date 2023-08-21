@@ -1,4 +1,21 @@
 #include "main.h"
+
+/**
+* printIntigers - prints an intiger to sdout
+* @args: va_list va_list variable
+*
+* Return: number of characters printed
+*/
+int printIntigers(va_list args)
+{
+int num = va_arg(args, int);
+int digits;
+
+digits = print_digits(num);
+
+return (digits);
+}
+
 /**
 * count_digits - counts the number of digits
 * @num: given number
@@ -43,22 +60,6 @@ if (base_int >= 10)
 print_digits(base_int / 10);
 }
 printer_fun(base_int % 10 + '0');
-
-return (digits);
-}
-
-/**
-* printIntigers - prints an intiger to sdout
-* @args: va_list va_list variable
-*
-* Return: number of characters printed
-*/
-int printIntigers(va_list args)
-{
-int num = va_arg(args, int);
-int digits;
-
-digits = print_digits(num);
 
 return (digits);
 }
