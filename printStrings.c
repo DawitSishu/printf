@@ -16,7 +16,10 @@ str = "(null)";
 
 for (i = 0; str[i] != '\0'; i++)
 {
-printer_fun(str[i]);
+if (printer_fun(str[i]) == -1)
+{
+return (-1);
+}
 item_count++;
 }
 return (item_count);

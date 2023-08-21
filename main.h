@@ -20,10 +20,6 @@ int (*identifierFunc(char *format))(va_list args);
 int printCharacters(va_list args);
 int printStrings(va_list args);
 int printIdentifier(va_list args);
-int printint(va_list args);
-int integer(int number);
-int contadordigit(int number);
-int _abs(int number);
 int printer_fun(const char c);
 int _printf(const char *format, ...);
 
