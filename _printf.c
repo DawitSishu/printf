@@ -1,18 +1,20 @@
 #include "main.h"
 
 /**
-* _printf - a custom function that acts like printf
-* @format: the string format that is used for printing
+* _printf - a custom functioon that acts like prinf
+* @format: the string format that is used  for printing
 *
 * Return: The number of characters printed
 */
 int _printf(const char *format, ...)
 {
-int printed_chars = 0, i, (*identifier)(va_list), j;
+int printed_chars = 0, i, (*identifier)(va_list);
 char identifiers[3];
 va_list args;
 if (format == NULL)
+{
 return (-1);
+}
 identifiers[2] = '\0';
 va_start(args, format);
 for (i = 0; format[i]; i++)
@@ -20,21 +22,18 @@ for (i = 0; format[i]; i++)
 if (format[i] == '%')
 {
 identifiers[0] = '%';
-j = i + 1;
-while (format[j] == ' ')
-j++;
-identifiers[1] = format[j];
+identifiers[1] = format[i + 1];
 identifier = identifierFunc(identifiers);
 if (identifier)
 {
 printed_chars += identifier(args);
-i = j;
+i++;
 }
-else if (format[j] != '\0')
+else if (format[i + 1] != '\0')
 {
 printed_chars += printer_fun('%');
-printed_chars += printer_fun(format[j]);
-i = j;
+printed_chars += printer_fun(format[i + 1]);
+i++;
 }
 else
 {
