@@ -11,10 +11,10 @@ int _printf(const char *format, ...)
 int printed_chars = 0, i, (*identifier)(va_list);
 char identifiers[3];
 va_list args;
-if (format == NULL)
-{
+if (format == NULL || (format[0] == '%' && !format[1]))
 return (-1);
-}
+if (format[0] == '%' && format[1] == ' ' && format[2] == '\0')
+return (-1);
 identifiers[2] = '\0';
 va_start(args, format);
 for (i = 0; format[i]; i++)
