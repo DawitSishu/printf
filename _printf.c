@@ -21,11 +21,11 @@ for (i = 0; format[i]; i++)
 {
 if (format[i] == '%')
 {
-identifiers[0] = '%';
-identifiers[1] = format[i + 1];
 identifier = identifierFunc(identifiers);
 if (identifier)
 {
+identifiers[0] = '%';
+identifiers[1] = format[i + 1];
 printed_chars += identifier(args);
 i++;
 }
